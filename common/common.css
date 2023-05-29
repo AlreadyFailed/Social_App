@@ -1,0 +1,116 @@
+.main-bg-color {
+	background-color: #d4237a !important;
+}
+
+.main-bg-hover-color {
+	background-color: rgba(241, 39, 140, 0.8) !important;
+}
+
+.main-text-color {
+	color: #d4237a !important;
+}
+
+.main-border-color {
+	border-color: #d4237a !important;
+}
+
+.fs-12 {
+	font-size: 12upx !important;
+}
+
+.fs-14 {
+	font-size: 14upx !important;
+}
+
+.fs-16 {
+	font-size: 16upx !important;
+}
+
+.fs-18 {
+	font-size: 18upx !important;
+}
+
+.fs-20 {
+	font-size: 20upx !important;
+}
+
+.fs-22 {
+	font-size: 22upx !important;
+}
+
+.fs-24 {
+	font-size: 24upx !important;
+}
+
+.fs-26 {
+	font-size: 26upx !important;
+}
+
+.fs-28 {
+	font-size: 28upx !important;
+}
+
+.fs-40{
+	font-size: 40upx !important;
+}
+
+.fs-600 {
+	font-weight: bold !important;
+}
+
+.color-fff {
+	color: #fff !important;
+}
+
+.color-6362 {
+	color: #636263;
+}
+
+.color-111 {
+	color: #111 !important;
+}
+
+.color-9292 {
+	color: #929292 !important;
+}
+
+.color-9898 {
+	color: #989898 !important;
+}
+
+.color-8d8d {
+	color: #8d8d8d !important;
+}
+
+.color-9b9b {
+	color: #9b9b9b !important;
+}
+
+.color-9191 {
+	color: #919191 !important;
+}
+
+.color-red {
+	color: red !important;
+}
+
+
+.bg-fff {
+	background-color: #fff !important;
+}
+
+.family-ser {
+	font-family: serif !important ;
+}
+
+.overflow-hidden{
+	overflow: hidden;
+}
+
+.display-none {
+	display: none !important;
+}
+
+.text-center {
+	text-align: center !important;
+}

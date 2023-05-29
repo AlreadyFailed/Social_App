@@ -1,0 +1,39 @@
+.login {
+  position: relative;
+  width: 750upx;
+  height: 1335upx;
+}
+.login .login_bg {
+  width: 750upx;
+  height: 1335upx;
+}
+.login .login_title {
+  position: absolute;
+  display: flex;
+  top: 250upx;
+  left: 0;
+  width: 750upx;
+  height: 100upx;
+  font-size: 40upx;
+  line-height: 100upx;
+}
+.login .login_title view {
+  width: 50%;
+  border-bottom: 2px solid #d4237a;
+}
+.login .login_title .login_title_border {
+  border-color: #fff;
+}
+.login .body_3th {
+  position: absolute;
+  top: 1000upx;
+  width: 750upx;
+  height: 50upx;
+  line-height: 50upx;
+}
+.login .body_3th_login {
+  position: absolute;
+  bottom: 100upx;
+  width: 750upx;
+  height: 100upx;
+}

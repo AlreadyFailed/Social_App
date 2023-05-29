@@ -1,0 +1,142 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// {
+		//     "path" : "pages/login/login",
+		//     "style" :                                                                                    
+		//     {
+		//         "navigationBarTitleText": "",
+		//         "enablePullDownRefresh": false,
+		// 		"navigationStyle": "custom"
+		//     }		    
+		// },
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "主页",
+				"navigationBarBackgroundColor": "#d4237a",
+				"enablePullDownRefresh": false
+				// "navigationStyle": "custom"
+				// "app-plus": {
+				// 	"titleNView": {
+				// 		"buttons": [{
+				// 				"float": "left",
+				// 				"fontSrc": "./static/iconfont.ttf",
+				// 				"text": "\ue621"
+				// 			},
+				// 			{
+				// 				"float": "right",
+				// 				"fontSrc": "./static/iconfont.ttf",
+				// 				"fontSize": "40upx",
+				// 				"text": "\ue68b"
+				// 			}
+				// 		]
+				// 	}
+				// }
+			}
+		},
+		{
+			"path": "pages/vicinity/vicinity",
+			"style": {
+				"navigationBarTitleText": "附近的人",
+				"navigationBarBackgroundColor": "#d4237a",
+				"enablePullDownRefresh": false,
+				// "navigationStyle": "custom"
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"float": "right",
+							"fontSrc": "./static/iconfont.ttf",
+							"fontSize": "40upx",
+							"text": "\ue692"
+						}]
+					}
+				}
+			}
+		}, {
+			"path": "pages/msg/msg",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/rogue/rogue",
+			"style": {
+				"navigationBarTitleText": "探花",
+				"enablePullDownRefresh": false
+				// "navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/vicinity/vicinity",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/soul/soul",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/setting/setting",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+
+	},
+	"tabBar": {
+		"color": "#323232",
+		"selectedColor": "#d4237a",
+		"backgroundColor": "#ffffff",
+		"borderStyle": "black",
+		"spacing": "3px",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "主页",
+				"iconPath": "static/tabbar/shouye2.png",
+				"selectedIconPath": "static/tabbar/shouye.png"
+			},
+			{
+				"pagePath": "pages/vicinity/vicinity",
+				"text": "附近",
+				"iconPath": "static/tabbar/fujin.png",
+				"selectedIconPath": "static/tabbar/fujin2.png"
+			},
+			{
+				"pagePath": "pages/msg/msg",
+				"text": "消息",
+				"iconPath": "static/tabbar/lindang1.png",
+				"selectedIconPath": "static/tabbar/lindang2.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我的",
+				"iconPath": "static/tabbar/wode1.png",
+				"selectedIconPath": "static/tabbar/wode2.png"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}

@@ -1,0 +1,125 @@
+.setting {
+  width: 750upx;
+  height: 1668upx;
+  overflow: hidden;
+  background-color: #fffff0;
+}
+.setting .head_title {
+  float: left;
+  margin-top: 100upx;
+  width: 350upx;
+  height: 90upx;
+  font-size: 50upx;
+  line-height: 90upx;
+  border-radius: 0 20upx 20upx 0;
+  color: #fff;
+}
+.setting .body {
+  position: relative;
+  top: 200upx;
+  left: 25upx;
+  width: 700upx;
+  height: 1500upx;
+}
+.setting .body .avatar {
+  position: absolute;
+  box-sizing: border-box;
+  top: 50upx;
+  left: 250upx;
+  border-radius: 50%;
+  width: 200upx;
+  height: 200upx;
+  border: 2px solid #fff;
+}
+.setting .body .avatar .avatar_text {
+  line-height: 200upx;
+}
+.setting .body .avatar .avatar_src {
+  margin: -30upx;
+  width: 250upx;
+  height: 250upx;
+}
+.setting .body .avatar .avatar_add {
+  position: absolute;
+  top: -10upx;
+  left: 135upx;
+  height: 40upx;
+  width: 40upx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.setting .body .avatar .avatar_add image {
+  width: 30upx;
+  height: 30upx;
+}
+.setting .body .avatar .avatar_tips {
+  margin-left: ;
+}
+.setting .body .nickname {
+  position: absolute;
+  box-sizing: border-box;
+  top: 340upx;
+  left: 150upx;
+  width: 400upx;
+  height: 150upx;
+  padding: 0 10upx ;
+}
+.setting .body .nickname input {
+  box-sizing: border-box;
+  margin-top: 20upx;
+  border-radius: 10upx;
+  padding-left: 10upx;
+  border: 2px solid #fff;
+}
+.setting .body .nickname .nickname_tips {
+  margin-top: 5upx;
+}
+.setting .body .sexy {
+  position: absolute;
+  top: 550upx;
+  left: 150upx;
+  width: 400upx;
+  height: 200upx;
+}
+.setting .body .sexy .sexy_MOW_circle {
+  float: left;
+  margin: 30upx 40upx;
+  width: 100upx;
+  height: 100upx;
+  border-radius: 50%;
+  background-color: lightgray;
+}
+.setting .body .sexy .sexy_MOW_circle image {
+  margin: 10upx 15upx;
+  width: 70upx;
+  height: 80upx;
+}
+.setting .body .sexy .sexy_MOW_or {
+  float: left;
+  margin-top: 50upx;
+}
+.setting .body .birthday {
+  position: absolute;
+  box-sizing: border-box;
+  top: 820upx;
+  left: 200upx;
+  width: 300upx;
+  height: 120upx;
+}
+.setting .body .birthday .birthday_date {
+  margin: 35upx -45upx;
+  width: 380upx;
+  height: 60upx;
+  line-height: 60upx;
+  border-radius: 10upx;
+  border: 2px solid #fff;
+}
+.setting .body .complete {
+  position: absolute;
+  top: 1100upx;
+  left: 175upx;
+  width: 350upx;
+  height: 100upx;
+  line-height: 100upx;
+  border-radius: 20upx;
+}
