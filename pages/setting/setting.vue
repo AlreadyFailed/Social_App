@@ -117,7 +117,7 @@
 					count:3,
 					sizeType:['compressed'],
 					sourceType:['ablum'],
-					crop:{width:500, height:500},
+					crop:{width:1000, height:1000},
 					success:function(res){
 						console.log(JSON.stringify(res.tempFilePaths));
 						_this.inputData.avatar_src = res.tempFilePaths[0];

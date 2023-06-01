@@ -17,7 +17,9 @@
             "delay" : 0
         },
         /* 模块配置 */
-        "modules" : {},
+        "modules" : {
+            "Maps" : {}
+        },
         /* 应用发布信息 */
         "distribute" : {
             /* android打包配置 */
@@ -46,7 +48,13 @@
             },
             /* SDK配置 */
             "sdkConfigs" : {
-                "ad" : {}
+                "ad" : {},
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "99009a685dde01795e97186acdbb5b51",
+                        "appkey_android" : "99009a685dde01795e97186acdbb5b51"
+                    }
+                }
             }
         }
     },
@@ -78,17 +86,17 @@
     //         "base" : "./"
     //     }
     // }
-	"h5": {
-		"devServer": {
-			"proxy": {
-				"/users": {
-					"target": "http://192.168.1.2:7070",
-					"changeOrigin": true,
-					"pathRewrite": {
-						"^/users": ""
-					}
-				}
-			}
-		}
-	}
+    "h5" : {
+        "devServer" : {
+            "proxy" : {
+                "/users" : {
+                    "target" : "http://192.168.1.2:7070",
+                    "changeOrigin" : true,
+                    "pathRewrite" : {
+                        "^/users" : ""
+                    }
+                }
+            }
+        }
+    }
 }

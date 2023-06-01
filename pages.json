@@ -40,7 +40,7 @@
 				"navigationBarTitleText": "附近的人",
 				"navigationBarBackgroundColor": "#d4237a",
 				"enablePullDownRefresh": false,
-				// "navigationStyle": "custom"
+				// "navigationStyle": "default",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -55,9 +55,10 @@
 		}, {
 			"path": "pages/msg/msg",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false,
-				"navigationStyle": "custom"
+				"navigationBarTitleText": "消息",
+				"navigationBarBackgroundColor": "#d4237a",
+				"enablePullDownRefresh": false
+				// "navigationStyle": "custom"
 			}
 		},
 		{

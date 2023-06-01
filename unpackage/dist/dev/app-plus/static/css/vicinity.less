@@ -1,0 +1,300 @@
+.body{
+	position: relative;
+	width: 750upx;
+	height: 1405upx;
+	background-color: #e7e6eb;
+	.body_swiper{
+		width: 100%;
+		height: 60%;
+		// background-color: #fff
+	}
+	.body_person{
+		position: absolute;
+		top: 120upx;
+		left: 50upx;
+		height: 648upx;
+		width: 650upx;
+		border-radius: 20upx;
+		border: 1px solid #dddddd;
+		background-color: #fff;		
+	}
+	
+	.body_person_img{
+		overflow: hidden;
+		width: 100%;
+		height: 76%;
+		border-radius: 20upx 20upx 0 0;
+		// background-color: lightgray;
+		image{
+			margin: -40upx 0;
+			height: 650upx;
+			width: 650upx;
+		}
+	}
+	.body_person_info{
+		overflow: hidden;
+		height: 23%;
+		width: 100%;
+		line-height: 150upx;
+		border-radius: 0 0 20upx 20upx;
+		// background-color: dimgray;
+		.person_info_left view{
+			float: left;
+			margin-left: 30upx;
+			// background-color: #fff;
+			image{
+				margin-top: 45upx;
+				width: 50upx;
+				height: 60upx;
+			}
+		}
+		.person_info_right view{
+			float: right;
+			margin-right: 20upx;
+			// background-color: #fff;
+			image{
+				margin-top: 50upx;
+				width: 50upx;
+				height: 50upx;
+			}
+		}
+	}
+	
+	
+	.body_button{
+		box-sizing: border-box;
+		position: absolute;
+		top: 950upx;
+		width: 750upx;
+		height: 300upx;		
+		// background-color: lightgray;
+		.body_button_pos{
+			box-sizing: border-box;
+			float: left;
+			overflow: hidden;
+			padding-top: 50upx;
+			margin-left: 80upx;
+			height: 300upx;
+			width: 150upx;
+			// background-color: slategray;
+			.body_button_img{				
+				height: 150upx;
+				width: 150upx;
+				border-radius: 50%;
+				background-color: #fff;
+				image{
+					margin: 30upx 25upx;
+					width: 100upx;
+					height: 100upx;
+				}
+			}
+			.body_button_text{
+				margin-top: 20upx;
+				font-size: 30upx
+			}
+		}
+		
+	}
+}
+.screen{
+	position: absolute;
+	top: 0;
+	width: 750upx;
+	height: 1405upx;
+	background-color: rgba(0, 0, 0, .5);
+	.screen_body{
+		position: absolute;
+		bottom: 0upx;
+		left: 10%;
+		width: 80%;
+		height: 80%;
+		border-radius: 30upx 30upx 0 0;
+		background-color: #dedde1;
+		.screen_body_close{
+			float: left;
+			margin:-50upx 0 0 600upx;
+			width: 60upx;
+			height: 60upx;
+		}
+		.screen_body_title{
+			height: 100upx;
+			width: 100%;
+			line-height: 80upx;
+			border-radius: 30upx 30upx 0 0;
+			background-color: #fff;
+		}
+		.screen_body_gender{
+			margin-top: 20upx;
+			width: 100%;
+			height: 250upx;
+			background-color: #fff;
+			.gender_title{
+				float: left;
+				margin: 20upx 20upx 0 20upx;
+			}
+			.gender_sexy{
+				box-sizing: border-box;
+				float: left;
+				width: 100%;
+				height: 200upx;
+				// background-color: lightgray;
+				.gender_sexy_pos{
+					float: left;
+					height: 200upx;
+					width: 140upx;
+					margin-left: 40upx;
+					// background-color: dimgray;
+					.gender_sexy_img{
+						margin: 20upx 10upx 10upx 10upx;
+						width: 120upx;
+						height: 120upx;
+						border-radius: 50%;
+						background-color: lightgray;	
+						image{
+							margin: 12upx 15upx;
+							width: 90upx;
+							height: 90upx;
+						}
+					}
+					.gender_sexy_text{
+						margin-top: 10upx;
+						background-color: #fff;
+					}
+				}
+				
+			}
+		}
+		.screen_body_age{
+			margin-top: 20upx;
+			width: 100%;
+			height: 200upx;
+			background-color: #fff;
+			.age_title{
+				float: left;
+				margin: 20upx;
+			}
+			.age_interval{
+				float: left;
+				margin:30upx 30upx;
+				height: 80upx;
+				width: 90%;
+				// background-color: gray;
+				.age_interval_line{
+					position: relative;
+					margin-top: 35upx;
+					height: 10upx;
+					width: 100%;
+					border-radius: 5upx;
+					background-color: lightgray;
+					.age_interval_line2{
+						float: left;
+						height: 10upx;
+						background-color: lightgray
+					}
+					.age_interval_line3{
+						float: right;
+						height: 10upx;
+						background-color: lightgray
+					}
+				}
+				
+				.age_interval_dot{
+					position: absolute;
+					margin-top: -35upx;
+					height: 60upx;
+					width: 60upx;
+					border-radius: 50upx;
+					background-color: #fff;
+				}
+				.age_interval_tips{
+					margin: -40upx 5upx;
+					line-height: 30upx;
+					height: 30upx;
+					width: 50upx;
+					border-radius: 10upx;
+					background-color: #ff9940;
+				}
+			}
+		}
+		.screen_body_distance{
+			margin-top: 20upx;
+			width: 100%;
+			height: 200upx;
+			background-color: #fff;
+			.distance_title{
+				float: left;
+				margin: 20upx;
+			}
+			.distance_interval{
+				float: left;
+				margin:30upx 30upx;
+				height: 80upx;
+				width: 540upx;
+				// background-color: lightgray;
+				.distance_interval_line{
+					position: relative;
+					margin-top: 35upx;
+					height: 10upx;
+					width: 100%;
+					border-radius: 10upx;
+					background-color: lightgray;
+					.distance_interval_line2{
+						height: 10upx;
+						width: 100%;
+						border-radius: 10upx;
+						background-color: #fff;
+					}
+				}
+				.distance_interval_dot{
+					position: absolute;
+					margin-top: -35upx;
+					height: 60upx;
+					width: 60upx;
+					border-radius: 50upx;
+					background-color: #fff;
+					.distance_interval_tips{
+						margin: -40upx 0 0 -10upx;
+						height: 30upx;
+						width: 80upx;
+						line-height: 30upx;
+						border-radius: 10upx;
+						background-color: #ff9940;
+					}
+				}
+			}
+		}
+		.screen_body_salary{
+			margin-top: 20upx;
+			height: 150upx;
+			width: 100%;
+			background-color: #fff;
+			.salary_title{
+				float: left;
+				margin: 20upx;
+			}
+			.salary_interval_labels{
+				float: left;
+				height: 60upx;
+				width: 100%;
+				// background-color: lightgray;
+				.labels{
+					float: left;
+					margin-left: 15upx;
+					line-height: 60upx;
+					height: 100%;
+					width: 22%;
+					border-radius: 10upx;
+					background-color: lightgray;
+				}
+			}
+		}
+		.screen_body_button{
+			margin: 30upx 150upx;
+			height: 100upx;
+			width: 300upx;
+			line-height: 100upx;
+			border-radius: 20upx;
+			background-color: #fff;
+		}
+	}
+}
