@@ -13,7 +13,7 @@ exports.norData = (data) => {
 	var tempUser = [];
 	var norData = [];
 	for (var i = 0; i < data.length; i++) {
-		if (data[i].fate > 60) {
+		if (data[i].privilege <= 0) {
 			tempUser.push(data[i]);
 		}
 	}

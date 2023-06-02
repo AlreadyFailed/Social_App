@@ -36,7 +36,8 @@
 					<view v-for="(item, index) in user_Data.length" :key="index">
 						<index-recommend :nickname="user_Data[index].nickname"
 							:info="[user_Data[index].address, '|',user_Data[index].age, '|',user_Data[index].education]"
-							:gender="user_Data[index].gender" :work="work">
+							:gender="user_Data[index].gender" :work="work"
+							:avatar_src="user_Data[index].avatarSrc">
 						</index-recommend>
 					</view>
 				</view>
@@ -81,12 +82,12 @@
 
 			}
 		},
-		onReady() {
+		onLoad() {
 			uni.request({
 				url: this.url + "/users",
 				method:"GET",
 				success: (res) => {
-					console.log(res.statusCode);
+					console.log(res.data.data);
 					this.user_Data = norData(res.data.data);
 					this.show.main = true;
 					console.log(this.user_Data);

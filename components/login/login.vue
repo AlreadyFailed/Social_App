@@ -252,6 +252,14 @@
 								success: (res) => {
 									if(res.data.code == 1){
 										this.show_Vericode = true;
+										uni.setStorage({
+											key:"phoneNum",
+											data:this.signUpTel
+										})
+										uni.setStorage({
+											key:"token",
+											data: res.data.data
+										})
 										uni.navigateTo({
 											url:"/pages/setting/setting"
 										})
@@ -261,6 +269,7 @@
 									}
 								}
 							})
+							
 							
 						
 						}

@@ -321,7 +321,6 @@
 						salary: this.salary_idx
 					},
 					success: (res) => {
-						console.log(uni.getStorageSync("token"));
 						console.log(res.data);
 					},
 					fail: (res) => {

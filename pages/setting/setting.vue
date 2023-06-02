@@ -98,14 +98,14 @@
 			},
 			getDate(type) {
 				const date = new Date();
-				let year = date.getFullYear();
+				let year = date.getFullYear()-18;
 				let month = date.getMonth() + 1;
 				let day = date.getDate();
 
 				if (type === 'start') {
 					year = year - 60;
 				} else if (type === 'end') {
-					year = year + 2;
+					year = year ;
 				}
 				month = month > 9 ? month : '0' + month;
 				day = day > 9 ? day : '0' + day;
@@ -146,23 +146,20 @@
 							birthday:this.inputData.date
 						},
 						success: (res) => {
-							console.log(res.data);
-							// if(res.data.code == 1){
-							// 	this.show.showAva = true;
-							// 	this.show.showNN = true;
-							// 	uni.setStorage({
-							// 		key:"token",
-							// 		data: res.data.data
-							// 	})
-							// 	uni.switchTab({
-							// 		url:"/pages/index/index"
-							// 	})
-							// }else{
-							// 	uni.showToast({
-							// 		title:"数据出错",
-							// 		icon:'none'
-							// 	})
-							// }
+							let json_data = JSON.parse(res.data);
+							console.log(json_data);
+							if(json_data.code == 1){
+								this.show.showAva = true;
+								this.show.showNN = true;								
+								uni.switchTab({
+									url:"/pages/index/index"
+								})
+							}else{
+								uni.showToast({
+									title:"数据出错",
+									icon:'none'
+								})
+							}
 						}
 					})
 					

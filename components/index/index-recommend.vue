@@ -2,7 +2,7 @@
 	<view>
 		<view class="body_recommend_content">
 			<view class="content_left">
-				<image src="../../static/src/zipai1.jpg" mode=""></image>
+				<image :src="avatar_src" mode=""></image>
 			</view>
 			<view class="content_right">
 				<view class="content_right_user">
@@ -19,7 +19,7 @@
 				</view>
 				<view class="content_right_img">
 					<view v-for="(item, index) in 3" :key="index">
-						<image src="../../static/src/topphoto.png" mode=""></image>
+						<image :src="avatar_src" mode=""></image>
 					</view>
 				</view>
 			</view>
@@ -29,7 +29,7 @@
 
 <script>
 	export default {
-		props:['nickname', 'gender', 'info', 'work'],
+		props:['nickname', 'gender', 'info', 'work', 'avatar_src'],
 		data() {
 			return {
 				data:{
