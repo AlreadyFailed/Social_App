@@ -2,7 +2,7 @@
 	<view class="swiper-item">
 		<view class="body_person">
 			<view class="body_person_img">
-				<image src="../../static/src/avatar_1.jpg" mode=""></image>
+				<image :src="avatar_src" mode=""></image>
 			</view>
 			<view class="body_person_info">
 				<view class="person_info_left">
@@ -31,7 +31,7 @@
 
 <script>
 	export default {
-		props: ['nickname', 'age', 'gender', 'famale', 'male', 'distance', 'distanceSrc'],
+		props: ['nickname', 'age', 'gender', 'avatar_src','famale', 'male', 'distance', 'distanceSrc'],
 		data() {
 			return {
 
@@ -71,7 +71,7 @@
 	}
 
 	.body_person_img image {
-		margin: -40upx 0;
+		margin: -130upx 0;
 		height: 650upx;
 		width: 650upx;
 	}

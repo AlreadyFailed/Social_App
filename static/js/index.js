@@ -17,9 +17,13 @@ exports.norData = (data) => {
 			tempUser.push(data[i]);
 		}
 	}
-	for (var i = 0; i < (tempUser.length < 7 ? tempUser.length : 7); i++) {
-		var index = Math.floor(Math.random() * tempUser.length);
+	var index = null;
+	var len = tempUser.length < 7 ? tempUser.length : 7;
+	
+	while(tempUser.length){
+		index = Math.floor(Math.random() * tempUser.length);
 		norData.push(tempUser[index]);
+		tempUser.splice(index, 1);
 	}
 	return norData;
 }

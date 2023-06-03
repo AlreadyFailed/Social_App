@@ -87,7 +87,7 @@
 				url: this.url + "/users",
 				method:"GET",
 				success: (res) => {
-					console.log(res.data.data);
+					// console.log(res.data.data);
 					this.user_Data = norData(res.data.data);
 					this.show.main = true;
 					console.log(this.user_Data);
