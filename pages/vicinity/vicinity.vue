@@ -246,7 +246,7 @@
 			// })
 
 			uni.request({
-				url: this.url + "/users/screen",
+				url: this.url + "/users/vic",
 				method: "GET",
 				header:{
 					"token": uni.getStorageSync("token")
