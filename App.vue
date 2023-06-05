@@ -20,7 +20,7 @@
 	
 
 	uni-page-head {
-		letter-spacing: 10upx;
+		letter-spacing: 5upx;
 	}
 
 	uni-page-head .uni-page-head__title {

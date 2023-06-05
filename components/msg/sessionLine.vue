@@ -6,8 +6,11 @@
 				<image :src="img" mode=""></image>
 			</view>
 			<view class="inherent_lis_right">
-				<view class="inherent_lis_right_text color-6362">
+				<view class="inherent_lis_right_user color-6362">
 					{{nickname}}
+				</view>
+				<view class="inherent_lis_right_text fs-22 color-9b9b">
+					{{content}}
 				</view>
 			</view>
 		</view>
@@ -16,7 +19,7 @@
 
 <script>
 	export default {
-		props: ['img', 'nickname'],
+		props: ['img', 'nickname', 'content'],
 		data() {
 			return {
 				isShow: false
@@ -55,7 +58,7 @@
 		box-sizing: border-box;
 		float: left;
 		overflow: hidden;
-		margin: 25upx 20upx 25upx 10upx;
+		margin: 25upx 20upx 25upx 20upx;
 		width: 100upx;
 		height: 100upx;
 		border-radius: 50upx;
@@ -64,27 +67,37 @@
 	}
 
 	.inherent_lis_img image {
-		margin:0 25upx 0 0;
-		width: 150upx;
-		height: 150upx;
+		width: 100upx;
+		height: 100upx;
 	}
 
 	.inherent_lis_right {
 		float: left;
 		box-sizing: border-box;
 		height: 148upx;
-		width: 570upx;
+		width: 590upx;
 		border-bottom: 1upx solid lightgray;
 		/* background-color: gray; */
 	}
 
-	.inherent_lis_right_text {
+	.inherent_lis_right_user {
 		box-sizing: border-box;
-		float: left;
-		margin: 50upx 0upx;
+		/* float: left; */
+		margin: 20upx 0upx 10upx;
 		padding-left: 10upx;
 		height: 50upx;
 		width: 250upx;
+		line-height: 50upx;
+		/* background-color: #fff; */
+	}
+	.inherent_lis_right_text{
+		box-sizing: border-box;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		padding-left: 10upx;
+		height: 50upx;
+		width: 500upx;
 		line-height: 50upx;
 		/* background-color: #fff; */
 	}

@@ -14,30 +14,27 @@
 				<view class="inherent_lis_right_arrow">
 					<image src="../../static/src/xiangyoujiantou.png" mode=""></image>
 				</view>
-			</view>
-			
+			</view>			
 		</view>
 	</view>
 </template>
 
 <script>
 	export default {
-		props:['img', 'text'],
+		props:['img', 'text','coordinateX'],
 		data() {
 			return {
-				isShow: false
+				isShow: false,
+				throttle : 0
 			}
 		},
 		methods: {
 			convertColorToMain(){
 				this.isShow = true
 			},
-			convertColorToNor(){
+			convertColorToNor(e){
 				this.isShow = false;
-				uni.showToast({
-					title:"ok",
-					icon:'none'
-				})
+				const poe_title = e.currentTarget.dataset.poe.poe_title
 			}
 		}
 	}
@@ -60,7 +57,7 @@
 		box-sizing: border-box;
 		float: left;
 		overflow: hidden;
-		margin: 25upx 20upx 25upx 10upx;
+		margin: 25upx 20upx 25upx 20upx;
 		width: 100upx;
 		height: 100upx;
 		border-radius: 50upx;
@@ -78,7 +75,7 @@
 		float: left;
 		box-sizing: border-box;
 		height: 148upx;
-		width: 570upx;
+		width: 590upx;
 		border-bottom: 1upx solid lightgray;
 		/* background-color: gray; */
 	}
@@ -106,4 +103,7 @@
 		width: 40upx;
 		height: 40upx;
 	}
+	
+	
+	
 </style>
