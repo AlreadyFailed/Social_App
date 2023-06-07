@@ -154,4 +154,128 @@
 			}
 		}
 	}
+	
+	.chatPage_chatRoom{
+		// overflow: hidden;
+		width: 750upx;
+		height: 1528upx;
+		background-color: gray;
+		.chatRoom_item{
+			margin-top: 20upx;
+			width: 750upx;
+			
+			.chatRoom_time{
+				// background-color: #fff;
+			}
+			.chatRoom_left{
+				position: relative;
+				margin: 25upx 20upx;
+				background-color: gray;
+				image{
+					float: left;
+					width: 80upx;
+					height: 80upx;
+				}
+				.chatRoom_left_text_triangle{
+					position: absolute;
+					left:75upx;
+					top: 30upx;
+					height: 0;
+					width: 0;
+					border-width: 15upx;
+					border-style: solid;
+					border-color: transparent slategray transparent transparent;
+				}
+				.chatRoom_left_text{
+					float: left;
+					box-sizing: border-box;
+					width: 450upx;
+					margin: 0 20upx;
+					padding: 0 10upx;
+					border-radius: 10upx;
+					background-color: slategray;
+					
+				}
+			}
+			.chatRoom_right{
+				position: relative;
+				margin: 25upx 20upx;
+				background-color: gray;
+				image{
+					float: right;
+					width: 80upx;
+					height: 80upx;
+				}
+				.chatRoom_right_text_triangle{
+					position: absolute;
+					right:75upx;
+					top: 30upx;
+					height: 0;
+					width: 0;
+					border-width: 15upx;
+					border-style: solid;
+					border-color: transparent  transparent transparent slategray;
+				}
+				.chatRoom_right_text{
+					float: right;
+					box-sizing: border-box;
+					width: 450upx;
+					padding:0 10upx ;
+					margin: 0 20upx;
+					background-color: slategray;
+				}
+			}
+		}
+	}
+	
+	
+	.chatPage_buttom{
+		height: 100upx;
+		width: 750upx;
+		background-color: lightgray;
+		.chatPage_bottom_voice{
+			float: left;
+			margin: 25upx 10upx;
+			height: 50upx;
+			width: 50upx;
+			background-color: gray;
+			image{
+				width: 50upx;
+				height: 50upx;
+			}
+		}
+		.chatPage_bottom_content{
+			float: left;
+			overflow: hidden;
+			margin: 10upx 10upx;
+			height: 80upx;
+			width: 520upx;
+			font-size: 35upx;
+			line-height: 80upx;
+			border-radius: 10upx;
+			background-color: gray;
+		}
+		.chatPage_bottom_expression{
+			float: left;
+			margin: 25upx 10upx;
+			height: 50upx;
+			width: 50upx;
+			background-color: gray;
+			image{
+				height: 50upx;
+				width: 50upx;
+			}
+		}
+		.chatPage_bottom_ohter{
+			float: left;
+			margin: 25upx 10upx;
+			height: 50upx;
+			width: 50upx;
+			background-color: gray;
+			image{
+				height: 50upx;
+				width: 50upx;
+			}
+		}
+	}
 }

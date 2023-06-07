@@ -1,74 +1,44 @@
 <template>
-	<view class="dad">
-		<view class="box" @tap="leftSlid"></view>
-		<view v-if="isShow" :class="['triangle']" :style="{'left':coordinateX + 'upx'}" @tap="rightSlid"></view>
+	<view>
+		<scroll-view scroll-y="true" class="scroll-Y" :scroll-into-view="scrollToView"
+	     scroll-with-animation="true">
+			<view id="damo1" class="demo uni-bg-green text-center">a</view>
+			<view id="damo2" class="demo uni-bg-red text-center">b</view>
+			<view id="damo3" class="demo uni-bg-blue text-center">c</view>
+		</scroll-view>
+		<button @tap="ToView">返回</button>
 	</view>
-
 </template>
-
-
 <script>
 	export default {
 		data() {
 			return {
-				isShow:false,
-				throttle:0,
-				coordinateX: 750
+				scrollToView: null,
 			}
 		},
+		computed: {
+			
+		},
 		methods: {
-			leftSlid(){
-				if(!this.throttle){
-					this.throttle = 1;
-					this.isShow = true;
-					console.log("1");
-					var timer = setInterval(()=>{
-						this.coordinateX -= 50;
-						if(this.coordinateX == 0){
-							this.throttle = 0;
-							clearInterval(timer);
-						}
-					}, 10)
-				}
-			},
-			rightSlid(){
-				if(!this.throttle){
-					this.throttle = 1;
-					console.log("2");
-					var timer = setInterval(()=>{
-						this.coordinateX += 50;
-						if(this.coordinateX == 750){
-							this.throttle = 0;
-							this.isShow = false;
-							clearInterval(timer);
-						}
-					}, 10)
-				}
+			ToView(){
+				this.scrollToView = null;
+				this.$nextTick(()=>{
+					this.scrollToView = 'damo3';
+				})
 			}
+		},
+		onLoad: () => {
 		}
 	}
 </script>
-
-
-
-<style>
-	.dad{
-		overflow: hidden;
-		width: 750upx;
-		height: 1668upx;
-		background-color: gray;
+<style >
+	.scroll-Y{
+		width: 300upx;
+		height: 300upx;
 	}
-	.box{
-		display: flex;
-		height: 200upx;
-		width: 750upx;
-		background-color: pink;
-	}
-	.triangle{
-		position: absolute;
-		top: 0;
-		height: 200upx;
-		width: 750upx;
-		background-color: skyblue;
+	.demo{
+		width: 300upx;
+		height: 300upx;
+		line-height: 300upx;
 	}
 </style>
