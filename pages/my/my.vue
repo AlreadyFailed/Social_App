@@ -1,6 +1,13 @@
 <template>
 	<view>
-		我的页
+		<view class="personal">
+			<view class="personal_title">
+				
+			</view>
+			<view class="personal_banner">
+				
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -11,6 +18,9 @@
 				
 			}
 		},
+		onLoad(){
+			
+		},
 		methods: {
 			
 		}
@@ -18,5 +28,5 @@
 </script>
 
 <style>
-
+@import url("../../static/css/personal.css");
 </style>

@@ -1,0 +1,15 @@
+.personal {
+  height: 1508upx;
+  width: 750upx;
+  background-color: gray;
+}
+.personal .personal_title {
+  height: 454upx;
+  width: 750upx;
+  background-color: darkgray;
+}
+.personal .personal_banner {
+  height: 1054upx;
+  width: 750upx;
+  background-color: lightgray;
+}

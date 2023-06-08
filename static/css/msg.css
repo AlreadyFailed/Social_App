@@ -137,8 +137,6 @@
 }
 .chatPage .chatPage_chatRoom {
   width: 750upx;
-  height: 1528upx;
-  background-color: gray;
 }
 .chatPage .chatPage_chatRoom .chatRoom_item {
   margin-top: 20upx;
@@ -202,51 +200,59 @@
   background-color: slategray;
 }
 .chatPage .chatPage_buttom {
+  position: fixed;
+  height: 600upx;
+  width: 750upx;
+}
+.chatPage .chatPage_buttom .chatPage_buttom_warp {
   height: 100upx;
   width: 750upx;
-  background-color: lightgray;
+  background-color: #fff;
 }
-.chatPage .chatPage_buttom .chatPage_bottom_voice {
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_voice {
   float: left;
   margin: 25upx 10upx;
   height: 50upx;
   width: 50upx;
-  background-color: gray;
 }
-.chatPage .chatPage_buttom .chatPage_bottom_voice image {
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_voice image {
   width: 50upx;
   height: 50upx;
 }
-.chatPage .chatPage_buttom .chatPage_bottom_content {
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_content {
+  box-sizing: border-box;
   float: left;
   overflow: hidden;
-  margin: 10upx 10upx;
-  height: 80upx;
+  margin: 15upx 10upx;
+  height: 70upx;
   width: 520upx;
   font-size: 35upx;
-  line-height: 80upx;
+  line-height: 65upx;
   border-radius: 10upx;
-  background-color: gray;
+  border: 1upx solid #989898;
 }
-.chatPage .chatPage_buttom .chatPage_bottom_expression {
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_expression {
   float: left;
   margin: 25upx 10upx;
   height: 50upx;
   width: 50upx;
-  background-color: gray;
 }
-.chatPage .chatPage_buttom .chatPage_bottom_expression image {
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_expression image {
   height: 50upx;
   width: 50upx;
 }
-.chatPage .chatPage_buttom .chatPage_bottom_ohter {
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_ohter {
   float: left;
   margin: 25upx 10upx;
   height: 50upx;
   width: 50upx;
-  background-color: gray;
 }
-.chatPage .chatPage_buttom .chatPage_bottom_ohter image {
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_ohter image {
   height: 50upx;
   width: 50upx;
+}
+.chatPage .chatPage_buttom .chatPage_buttom_more {
+  height: 500upx;
+  width: 750upx;
+  background-color: darkslategray;
 }
