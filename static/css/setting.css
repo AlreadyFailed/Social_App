@@ -79,7 +79,7 @@
   top: 550upx;
   left: 150upx;
   width: 400upx;
-  height: 200upx;
+  height: 210upx;
 }
 .setting .body .sexy .sexy_MOW_circle {
   float: left;
@@ -93,6 +93,18 @@
   margin: 10upx 15upx;
   width: 70upx;
   height: 80upx;
+}
+.setting .body .sexy .sexy_MOW_famale {
+  position: absolute;
+  bottom: 0;
+  left: 70upx;
+  color: #919191;
+}
+.setting .body .sexy .sexy_MOW_male {
+  position: absolute;
+  bottom: 0;
+  right: 85upx;
+  color: #919191;
 }
 .setting .body .sexy .sexy_MOW_or {
   float: left;

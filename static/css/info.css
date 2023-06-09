@@ -1,0 +1,159 @@
+.info {
+  position: relative;
+  height: 1668upx;
+  width: 750upx;
+  background-color: #f0f0f0;
+}
+.info .info_head {
+  position: absolute;
+  top: 0;
+  height: 500upx;
+  width: 750upx;
+  border-radius: 0 0 100upx 100upx;
+  background-image: url("../../static/src/info_image.jpg");
+  background-repeat: no-repeat;
+  background-size: 1500upx 500upx;
+  background-position: -280upx -50upx;
+}
+.info .info_head .back {
+  position: absolute;
+  top: 80upx;
+  left: 20upx;
+  height: 50upx;
+  width: 50upx;
+}
+.info .info_head .back image {
+  width: 50upx;
+  height: 50upx;
+}
+.info .info_head .head_title {
+  float: left;
+  margin: 170upx 40upx;
+  height: 100upx;
+  width: 200upx;
+  font-size: 50upx;
+  line-height: 100upx;
+}
+.info .info_body {
+  position: absolute;
+  top: 300upx;
+  left: 10upx;
+  height: 1218upx;
+  width: 730upx;
+  border-radius: 20upx 20upx;
+  background-color: #fff;
+  box-shadow: 0 0 15upx rgba(212, 35, 122, 0.5);
+}
+.info .info_body .body_avatar {
+  float: left;
+  overflow: hidden;
+  margin: 0 300upx;
+  height: 150upx;
+  width: 150upx;
+  border-radius: 50%;
+  border: 1upx solid #d4237a;
+  background-color: lightgray;
+}
+.info .info_body .body_lis {
+  box-sizing: border-box;
+  float: left;
+  margin: 0 15upx 30upx;
+  height: 100upx;
+  width: 700upx;
+  line-height: 100upx;
+  border-bottom: 1upx solid #919191;
+}
+.info .info_body .body_lis .basic {
+  float: left;
+  height: 60upx;
+  margin-left: 30upx;
+  color: #919191;
+}
+.info .info_body .body_lis input {
+  float: right;
+  margin: 20upx 20upx 0 0;
+  width: 500upx;
+  font-size: 40upx;
+  font-weight: 600;
+}
+.info .info_body .body_lis .date {
+  float: right;
+  margin: 20upx 20upx 0 0;
+  height: 60upx;
+  width: 400upx;
+  line-height: 60upx;
+  color: #2e384c;
+}
+.info .info_body .body_lis .gender_img {
+  float: right;
+  margin: 10upx 150upx 0 0;
+  height: 80upx;
+  width: 80upx;
+  border-radius: 50upx;
+  background-color: lightgray;
+}
+.info .info_body .body_lis .gender_img image {
+  width: 80upx;
+  height: 80upx;
+}
+.info .info_body .body_lis .slide {
+  position: relative;
+  float: right;
+  margin: -20upx 20upx;
+  height: 100upx;
+  width: 500upx;
+}
+.info .info_body .body_lis .slide .slide_line {
+  margin-top: 65upx;
+  height: 8upx;
+  width: 500upx;
+  border-radius: 8upx;
+  background-color: #919191;
+}
+.info .info_body .body_lis .slide .slide_line .slide_line_value {
+  position: absolute;
+  top: 65upx;
+  height: 8upx;
+  border-radius: 8upx;
+  background-color: #d4237a;
+}
+.info .info_body .body_lis .slide .slide_dot {
+  position: absolute;
+  top: 45upx;
+  height: 50upx;
+  width: 50upx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.info .info_body .body_lis .slide .slide_dot .slide_dot_view {
+  position: absolute;
+  top: -40upx;
+  left: -15upx;
+  height: 40upx;
+  width: 80upx;
+  line-height: 40upx;
+  border-radius: 10upx;
+  background-color: orange;
+}
+.info .info_body .body_lis .picker_selector {
+  float: right;
+  margin: 10upx 20upx;
+  height: 80upx;
+  width: 400upx;
+  line-height: 80upx;
+  color: #182a4c;
+}
+.info .info_foot {
+  position: absolute;
+  bottom: 0;
+  height: 150upx;
+  width: 750upx;
+}
+.info .info_foot .foot_btn {
+  float: right;
+  margin: 25upx;
+  height: 100upx;
+  width: 300upx;
+  border-radius: 20upx;
+  line-height: 100upx;
+}

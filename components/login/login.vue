@@ -1,8 +1,7 @@
 <template>
 	<swiper class="body_login" :current="index" disable-touch="true" :duration="300">
 		<swiper-item>
-			<view class="swiper-item">
-				
+			<view class="swiper-item">				
 				<input class="telephone text-center color-fff" type="number" maxlength="11" placeholder="手机号/用户名"
 					v-model="signInTel" adjust-position="true" placeholder-class="style-PL">
 				<view :class="['tips2', 'color-red', 'fs-22',{'display-none': show_TEL}]">
@@ -39,12 +38,6 @@
 				<view :class="['tips2', 'color-red', 'fs-22',{'display-none': show_TEL2}]">
 					手机号输入错误
 				</view>
-				
-<!-- 				<input class="telephone text-center color-fff" type="text" :password="true" :maxlength="24"
-					v-model="signUpPwd" placeholder="输入密码" placeholder-class="style-PL">
-				<view :class="['tips2', 'color-red', 'fs-22',{'display-none': show_PWD2}]">
-					{{signUpPwd_error}}
-				</view> -->
 				
 				<input class="telephone telephone_verify text-center color-fff" type="number" :maxlength="6"
 					placeholder="输入验证码" placeholder-class="style-PL" v-model="inputcode">
@@ -138,7 +131,7 @@
 										},
 									}),
 									uni.switchTab({
-										url:"/pages/index/index"
+										url:"/pages/my/my"
 									})
 								}else{
 									console.log("Login falied");

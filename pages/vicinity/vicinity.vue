@@ -363,7 +363,7 @@
 				
 				// Send Request
 				uni.request({
-					url: this.url + "/users",
+					url: this.url + "/users/screen",
 					method: 'POST',
 					header: {
 						"token": uni.getStorageSync("token")

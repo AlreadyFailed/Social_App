@@ -2,6 +2,10 @@
 	<view class="login">
 		<!-- Background -->
 		<image class="login_bg" src="../../static/src/login_bg.jpg" mode=""></image>	
+		<!-- Back to -->
+		<view class="back" @tap="handleBack">
+			<image src="../../static/xiangzuojiantou.png" mode=""></image>
+		</view>
 		<!-- Title -->
 		<view class="login_title main-text-color fs-600 text-center">
 			<view :class="[{'login_title_border color-fff': signIn}]" @tap="handleSignIn" >
@@ -48,6 +52,13 @@
 			},
 			acceptAgree(){
 				this.showAgree = !this.showAgree;				
+			},
+			handleBack(){
+				uni.navigateBack({
+					delta:1,
+					animationType: 'slide-out-left',
+					animationDuration: 1000
+				})
 			}
 		},
 		components:{

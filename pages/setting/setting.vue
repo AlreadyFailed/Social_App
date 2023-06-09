@@ -27,15 +27,21 @@
 				<view class="fs-28 main-text-color fs-600 text-center ">
 					选择性别
 				</view>
-				<view class="sexy_manOrwoman">
+				<view class="sexy_manOrwoman">					
 					<view :class="['sexy_MOW_circle', {'main-bg-color': !show.showSexy}]" @tap="choiceSexy1">
 						<image src="../../static/src/sexy_0.png" mode=""></image>
+					</view>
+					<view :class="['sexy_MOW_famale', 'fs-28', {'main-text-color': !show.showSexy}]">
+						女
 					</view>
 					<view  class="sexy_MOW_or fs-600 main-text-color">
 						or
 					</view>
 					<view :class="['sexy_MOW_circle', {'main-bg-color': show.showSexy}]" @tap="choiceSexy2">
 						<image src="../../static/src/sexy_1.png" mode=""></image>
+					</view>
+					<view :class="['sexy_MOW_male', 'fs-28', {'main-text-color': show.showSexy}]">
+						男
 					</view>
 				</view>
 			</view>
@@ -152,7 +158,7 @@
 								this.show.showAva = true;
 								this.show.showNN = true;								
 								uni.switchTab({
-									url:"/pages/index/index"
+									url:"/pages/my/my"
 								})
 							}else{
 								uni.showToast({
