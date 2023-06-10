@@ -26,9 +26,9 @@
 					</view>
 				</view>
 				<view class="personal_title_energy">
-					<view class="energy_lis text-center" v-for="(item,index) in 4" :key="index">
+					<view class="energy_lis text-center" v-for="(item,index) in user_socialize" :key="index">
 						<view class="amount fs-600 ">
-							{{user_socialize.friend}}
+							{{item}}
 						</view>
 						<view class="designation color-9191 fs-40">
 							{{text.energy[index]}}
@@ -75,9 +75,14 @@
 					isLogin:null
 				},
 				user_data:{},
-				user_socialize:{},
+				user_socialize:{
+					friendList:0,
+					care:0,
+					fans:0,
+					group:0,
+				},
 				text:{
-					energy:['好友', '关注', '粉丝', '群组'],
+					energy:{friendList:'好友', care:'关注', fans:'粉丝', group:'群组'},
 					socialeze:['我的动态', '谁看过我', '我互动过', '会员中心'],
 					banner:['我的信息', '设置']
 				},
@@ -103,9 +108,19 @@
 				},
 				success:(res)=>{
 					if(res.data.code === 1){
-						this.user_data = res.data.data;						
+						console.log(res.data);
+						this.user_data = res.data.data[0];
+						this.user_socialize.friendList = res.data.data[1].friendList;
+						this.user_socialize.care = res.data.data[1].care;
+						this.user_socialize.fans = res.data.data[1].fans;
+						uni.setStorage({
+							key:'user',
+							data:this.user_data
+						})
+						this.show.isLogin = true;
 					}else{
 						this.show.isLogin = false;
+						console.log(res.data);
 					}
 					this.show.main = true;
 				},

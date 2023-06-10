@@ -221,7 +221,7 @@
 					left: 24,
 					right: 30
 				},
-				salary: ['0-10万', '10-20万', '20-30万', '不限'],
+				salary: ['0-5万', '5-10万', '10-20万', '不限'],
 				salary_idx: 0,
 				text: ['关注', '打招呼', '下一个'],
 				distance: 500,
@@ -348,14 +348,14 @@
 				var salaryMax = null;
 				var salaryMin = null;
 				if (this.salary_idx == 0) {
-					salaryMax = 10000;
+					salaryMax = 5000;
 					salaryMin = 0;
 				} else if (this.salary_idx == 1) {
-					salaryMax = 20000;
-					salaryMin = 10000;
+					salaryMax = 10000;
+					salaryMin = 5001;
 				} else if (this.salary_idx == 2) {
-					salaryMax = 30000;
-					salaryMin = 20000;
+					salaryMax = 20000;
+					salaryMin = 10001;
 				} else {
 					salaryMax = 100000;
 					salaryMin = 0;

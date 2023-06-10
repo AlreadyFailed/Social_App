@@ -47,12 +47,15 @@
 .info .info_body .body_avatar {
   float: left;
   overflow: hidden;
-  margin: 0 300upx;
+  margin: 10upx 300upx;
   height: 150upx;
   width: 150upx;
   border-radius: 50%;
   border: 1upx solid #d4237a;
-  background-color: lightgray;
+}
+.info .info_body .body_avatar image {
+  height: 150upx;
+  width: 150upx;
 }
 .info .info_body .body_lis {
   box-sizing: border-box;
@@ -72,7 +75,7 @@
 .info .info_body .body_lis input {
   float: right;
   margin: 20upx 20upx 0 0;
-  width: 500upx;
+  width: 450upx;
   font-size: 40upx;
   font-weight: 600;
 }
@@ -80,7 +83,7 @@
   float: right;
   margin: 20upx 20upx 0 0;
   height: 60upx;
-  width: 400upx;
+  width: 450upx;
   line-height: 60upx;
   color: #2e384c;
 }
@@ -139,7 +142,7 @@
   float: right;
   margin: 10upx 20upx;
   height: 80upx;
-  width: 400upx;
+  width: 450upx;
   line-height: 80upx;
   color: #182a4c;
 }
