@@ -81,7 +81,12 @@
 					showText:false,
 					showNN: true,
 					showAva:true
+				},
+				coordinate:{
+					longitude: 0.0,
+					latitude: 0.0
 				}
+				
 			}
 		},
 		computed: {
@@ -141,33 +146,53 @@
 				}
 				// Judge inputdata is correct
 				else{
-					uni.uploadFile({
-						url:this.url + "/upload",
-						filePath:this.inputData.avatar_src,
-						name:"image",
-						formData:{
-							phoneNum:uni.getStorageSync("phoneNum"),
-							nickname:this.inputData.nickname,
-							gender:(this.show.showSexy ? 1 : 0),
-							birthday:this.inputData.date
-						},
-						success: (res) => {
-							let json_data = JSON.parse(res.data);
-							console.log(json_data);
-							if(json_data.code == 1){
-								this.show.showAva = true;
-								this.show.showNN = true;								
-								uni.switchTab({
-									url:"/pages/my/my"
-								})
-							}else{
-								uni.showToast({
-									title:"数据出错",
-									icon:'none'
-								})
-							}
+					uni.getLocation({
+						type: 'gcj02',
+						geocode: true,
+						success: ({longitude,latitude, address}) => {
+							console.log('当前位置的经度：' + longitude)
+							console.log('当前位置的纬度：' + latitude)
+							console.log(address);
+							this.coordinate.longitude = longitude;
+							this.coordinate.latitude = latitude;
+							// let distance = getDistance(this.coordinate.longitude, this.coordinate.latitude, 110, 30);
+							// distance = Number(distance).toFixed(2)
+							// console.log(distance);
 						}
 					})
+					setTimeout(()=>{
+						uni.uploadFile({
+							url:this.url + "/upload",
+							filePath:this.inputData.avatar_src,
+							name:"image",
+							formData:{
+								phoneNum:uni.getStorageSync("phoneNum"),
+								nickname:this.inputData.nickname,
+								birthday:this.inputData.date,
+								gender:(this.show.showSexy ? 1 : 0),							
+								coordinateLat : this.coordinate.latitude,
+								coordinateLong: this.coordinate.longitude
+							},
+							success: (res) => {
+								let json_data = JSON.parse(res.data);
+								console.log(json_data);
+								if(json_data.code == 1){
+									this.show.showAva = true;
+									this.show.showNN = true;								
+									uni.switchTab({
+										url:"/pages/my/my"
+									})
+								}else{
+									uni.showToast({
+										title:"数据出错",
+										icon:'none'
+									})
+								}
+							}
+						})
+					}, 2000)
+					
+					
 					
 				}
 			}

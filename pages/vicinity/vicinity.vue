@@ -230,21 +230,6 @@
 			}
 		},
 		onLoad() {
-			// uni.getLocation({
-			// 	type: 'gcj02',
-			// 	geocode: true,
-			// 	success: ({longitude,latitude, address}) => {
-			// 		console.log('当前位置的经度：' + longitude)
-			// 		console.log('当前位置的纬度：' + latitude)
-			// 		console.log(address);
-			// 		this.coordinate.longitude = longitude;
-			// 		this.coordinate.latitude = latitude;
-			// 		let distance = getDistance(this.coordinate.longitude, this.coordinate.latitude, 110, 30);
-			// 		distance = Number(distance).toFixed(2)
-			// 		console.log(distance);
-			// 	}
-			// })
-
 			uni.request({
 				url: this.url + "/users/vic",
 				method: "GET",

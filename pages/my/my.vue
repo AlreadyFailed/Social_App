@@ -67,6 +67,7 @@
 <script>
 	import Loading from "../../components/loading.vue";
 	import {handleBanner} from "../../static/js/personal.js"
+	// import {reload} from "../../static/js/reload.js"
 	export default {
 		data() {
 			return {
@@ -125,7 +126,7 @@
 					this.show.main = true;
 				},
 				fail:(res)=>{
-					console.log(res.data);
+					console.log(res.data)
 				}
 			})
 		},
@@ -136,7 +137,22 @@
 				})
 			},
 			handleInfo(index){
-				handleBanner(index, this.show.isLogin);
+				if(this.show.isLogin){
+					uni.navigateTo({
+						url:"/pages/info/info",
+						animationType:"slide-in-right",
+						animationDuration:500
+					})
+					this.reload();
+				}else{
+					uni.showToast({
+						title:"请登录",
+						icon:"error"
+					})
+				}
+			},
+			reload(){
+				this.$forceUpdate();
 			}
 		},
 		components:{

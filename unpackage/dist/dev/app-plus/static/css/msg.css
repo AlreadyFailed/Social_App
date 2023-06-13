@@ -1,0 +1,258 @@
+.body {
+  box-sizing: border-box;
+  width: 750upx;
+  height: 1668upx;
+}
+.body .body_title {
+  height: 90upx;
+  width: 750upx;
+  line-height: 90upx;
+  letter-spacing: 10upx;
+  background-color: #d4237a;
+}
+.body .body_inherent {
+  float: left;
+  margin-top: 20upx;
+  height: 490upx;
+  width: 100%;
+  background-color: #fff;
+}
+.body .body_inherent .body_inherent_lis {
+  box-sizing: border-box;
+  margin-top: 15upx;
+  height: 150upx;
+  width: 100%;
+  /* background-color: lightgray; */
+}
+.body .body_inherent .inherent_lis_color {
+  background-color: #ebebeb;
+}
+.body .body_inherent .inherent_lis_img {
+  box-sizing: border-box;
+  float: left;
+  overflow: hidden;
+  margin: 25upx 20upx 25upx 20upx;
+  width: 100upx;
+  height: 100upx;
+  border-radius: 50upx;
+  border: 2upx solid #f5c5f5;
+  background-color: #f0f0f0;
+}
+.body .body_inherent .inherent_lis_img image {
+  margin: 5upx 10upx;
+  width: 80upx;
+  height: 80upx;
+}
+.body .body_inherent .inherent_lis_imgSS {
+  box-sizing: border-box;
+  float: left;
+  overflow: hidden;
+  margin: 25upx 20upx 25upx 20upx;
+  width: 100upx;
+  height: 100upx;
+  border-radius: 50upx;
+  border: 2upx solid #f5c5f5;
+  background-color: #f0f0f0;
+}
+.body .body_inherent .inherent_lis_imgSS image {
+  margin: -10upx 0;
+  width: 100upx;
+  height: 100upx;
+}
+.body .body_inherent .inherent_lis_right {
+  float: left;
+  box-sizing: border-box;
+  height: 148upx;
+  width: 590upx;
+  border-bottom: 1upx solid lightgray;
+}
+.body .body_inherent .inherent_lis_right_inherent {
+  box-sizing: border-box;
+  float: left;
+  margin: 50upx 0upx;
+  padding-left: 10upx;
+  height: 50upx;
+  width: 250upx;
+  line-height: 50upx;
+}
+.body .body_inherent .inherent_lis_right_user {
+  box-sizing: border-box;
+  margin: 20upx 0upx 10upx;
+  padding-left: 10upx;
+  height: 50upx;
+  width: 250upx;
+  line-height: 50upx;
+}
+.body .body_inherent .inherent_lis_right_text {
+  box-sizing: border-box;
+  float: left;
+  padding-left: 10upx;
+  height: 50upx;
+  width: 250upx;
+  line-height: 50upx;
+  background-color: #fff;
+}
+.body .body_inherent .inherent_lis_right_arrow {
+  float: right;
+  margin: 55upx 20upx;
+  width: 40upx;
+  height: 40upx;
+}
+.body .body_inherent .inherent_lis_right_arrow image {
+  width: 40upx;
+  height: 40upx;
+}
+.body .body_session {
+  float: left;
+  margin-top: 20upx;
+  width: 100%;
+  height: 1148upx;
+  background-color: #fff;
+}
+.chatPage {
+  position: absolute;
+  top: 0;
+  height: 1668upx;
+  width: 750upx;
+  background-color: #fff;
+}
+.chatPage .chatPage_title {
+  height: 90upx;
+  width: 750upx;
+  line-height: 90upx;
+  background-color: #f0f0f0;
+}
+.chatPage .chatPage_title .chatPage_title_left {
+  position: absolute;
+  overflow: hidden;
+  top: 20upx;
+  left: 10upx;
+  height: 50upx;
+  width: 50upx;
+}
+.chatPage .chatPage_title .chatPage_title_left image {
+  margin: 0 0 10upx 0;
+  width: 50upx;
+  height: 50upx;
+}
+.chatPage .chatPage_chatRoom {
+  width: 750upx;
+}
+.chatPage .chatPage_chatRoom .chatRoom_item {
+  margin-top: 20upx;
+  width: 750upx;
+}
+.chatPage .chatPage_chatRoom .chatRoom_item .chatRoom_left {
+  position: relative;
+  margin: 25upx 20upx;
+  background-color: gray;
+}
+.chatPage .chatPage_chatRoom .chatRoom_item .chatRoom_left image {
+  float: left;
+  width: 80upx;
+  height: 80upx;
+}
+.chatPage .chatPage_chatRoom .chatRoom_item .chatRoom_left .chatRoom_left_text_triangle {
+  position: absolute;
+  left: 75upx;
+  top: 30upx;
+  height: 0;
+  width: 0;
+  border-width: 15upx;
+  border-style: solid;
+  border-color: transparent slategray transparent transparent;
+}
+.chatPage .chatPage_chatRoom .chatRoom_item .chatRoom_left .chatRoom_left_text {
+  float: left;
+  box-sizing: border-box;
+  width: 450upx;
+  margin: 0 20upx;
+  padding: 0 10upx;
+  border-radius: 10upx;
+  background-color: slategray;
+}
+.chatPage .chatPage_chatRoom .chatRoom_item .chatRoom_right {
+  position: relative;
+  margin: 25upx 20upx;
+  background-color: gray;
+}
+.chatPage .chatPage_chatRoom .chatRoom_item .chatRoom_right image {
+  float: right;
+  width: 80upx;
+  height: 80upx;
+}
+.chatPage .chatPage_chatRoom .chatRoom_item .chatRoom_right .chatRoom_right_text_triangle {
+  position: absolute;
+  right: 75upx;
+  top: 30upx;
+  height: 0;
+  width: 0;
+  border-width: 15upx;
+  border-style: solid;
+  border-color: transparent  transparent transparent slategray;
+}
+.chatPage .chatPage_chatRoom .chatRoom_item .chatRoom_right .chatRoom_right_text {
+  float: right;
+  box-sizing: border-box;
+  width: 450upx;
+  padding: 0 10upx ;
+  margin: 0 20upx;
+  background-color: slategray;
+}
+.chatPage .chatPage_buttom {
+  position: fixed;
+  height: 600upx;
+  width: 750upx;
+}
+.chatPage .chatPage_buttom .chatPage_buttom_warp {
+  height: 100upx;
+  width: 750upx;
+  background-color: #fff;
+}
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_voice {
+  float: left;
+  margin: 25upx 10upx;
+  height: 50upx;
+  width: 50upx;
+}
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_voice image {
+  width: 50upx;
+  height: 50upx;
+}
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_content {
+  box-sizing: border-box;
+  float: left;
+  overflow: hidden;
+  margin: 15upx 10upx;
+  height: 70upx;
+  width: 520upx;
+  font-size: 35upx;
+  line-height: 65upx;
+  border-radius: 10upx;
+  border: 1upx solid #989898;
+}
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_expression {
+  float: left;
+  margin: 25upx 10upx;
+  height: 50upx;
+  width: 50upx;
+}
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_expression image {
+  height: 50upx;
+  width: 50upx;
+}
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_ohter {
+  float: left;
+  margin: 25upx 10upx;
+  height: 50upx;
+  width: 50upx;
+}
+.chatPage .chatPage_buttom .chatPage_buttom_warp .chatPage_bottom_ohter image {
+  height: 50upx;
+  width: 50upx;
+}
+.chatPage .chatPage_buttom .chatPage_buttom_more {
+  height: 500upx;
+  width: 750upx;
+  background-color: darkslategray;
+}

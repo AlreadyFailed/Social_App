@@ -38,9 +38,13 @@
 				<view :class="['tips2', 'color-red', 'fs-22',{'display-none': show_TEL2}]">
 					手机号输入错误
 				</view>
-				
-				<input class="telephone telephone_verify text-center color-fff" type="number" :maxlength="6"
-					placeholder="输入验证码" placeholder-class="style-PL" v-model="inputcode">
+				<input class="telephone text-center color-fff" type="password" maxlength="20"
+					placeholder="输入密码" placeholder-class="style-PL" v-model="signUpPwd">
+				<view :class="['tips2', 'color-red', 'fs-22',{'display-none': show_PWD2}]">
+					{{signUpPwd_error}}
+				</view>
+				<input class="telephone telephone_verify text-center color-fff" type="number" maxlength="6"
+					placeholder="输入验证码" placeholder-class="style-PL" v-model="inputcode">				
 				<view :class="['tips2', 'color-red', 'fs-22', {'display-none':show_Vericode}]">
 					{{vericode_Error}}
 				</view>
@@ -82,6 +86,7 @@
 				signInTel: '',
 				signInPwd: '',
 				signUpTel: '',
+				signUpPwd: '',
 				currentTel:'',
 				signUpPwd_error: '密码输入错误',
 				inputcode: '',
@@ -201,7 +206,13 @@
 			},
 			SignUp(){
 				// Judge input data is Empty
-				if(this.inputcode.length == 0 || this.signUpTel.length != 11 || !this.accept_agree){
+				if(this.inputcode.length === 0 || this.signUpTel.length != 11 || !this.accept_agree || this.signUpPwd.length === 0){
+					if(this.signUpPwd.length == 0){
+						this.show_PWD2 = false;
+						this.signUpPwd_error = "请输入密码";
+					}else{
+						this.show_PWD2 = true;
+					}
 					if(this.inputcode.length != 6){
 						this.vericode_Error = "请获取验证码";
 						this.show_Vericode = false;
@@ -216,17 +227,14 @@
 				
 				// Judge input data is correct
 				else{
-					// 
-					// var reg = /^(?=.*\d)(?=.*[A-Z])[a-zA-Z0-9]{6,18}$/;
-					// var determinePWD = reg.test(this.signUpPwd);
-					// if(this.getcode != this.inputcode){
-					// 	this.vericode_Error = "验证码输入错误";
-					// 	this.show_Vericode = false;
-					// 	console.log("Verify code is Error");
-					// }else 
+					var reg = /^(?=.*\d)(?=.*[A-Z])[a-zA-Z0-9]{6,18}$/;
+					var determinePWD = reg.test(this.signUpPwd);
 					if(this.currentTel != this.signUpTel){
 						this.show_TEL2 = false;
 						console.log("Telephone Number is Error");
+					}else if (!determinePWD){
+						this.show_PWD2 = false;
+						console.log("Password is Error");
 					}else{
 						this.show_TEL2 = true;
 						this.show_PWD2 = true;
@@ -235,7 +243,7 @@
 						this.endTime = new Date().getTime();
 						if(this.startTime >= this.endTime){
 							uni.request({
-								url:this.url + "/signup/",
+								url:this.url + "/signup",
 								method:'POST',
 								data:{
 									phoneNum: this.signUpTel,
@@ -335,7 +343,7 @@
 
 	.verify_code {
 		position: absolute;
-		top: 155upx;
+		top: 295upx;
 		left: 400upx;
 		line-height: 70upx;
 		width: 150upx;

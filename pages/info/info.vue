@@ -28,7 +28,7 @@
 					<view class="basic">
 						昵称
 					</view>
-					<input type="text" maxlength="15" v-model="input_data.nickname" :value="input_data.nickname" placeholder="填写昵称" placeholder-style="font-size:35upx;font-weight:100">
+					<input type="text" maxlength="15" v-model="input_data.nickname" placeholder="填写昵称" placeholder-style="font-size:35upx; font-weight:100;">
 				</view>
 				<view class="body_lis">
 					<view class="basic">
@@ -60,7 +60,7 @@
 					</view>
 					<view class="slide">
 						<view class="slide_line">
-							<view class="slide_line_value" :style="{'width' : body_lis.weightWidth + 'upx'}">								
+							<view class="slide_line_value" :style="{'width' : body_lis.weightLeft + 10 + 'upx'}">								
 							</view>
 						</view>
 						<view class="slide_dot main-bg-color" 
@@ -78,7 +78,7 @@
 					</view>
 					<view class="slide">
 						<view class="slide_line">
-							<view class="slide_line_value" :style="{'width' : body_lis.heightWidth + 'upx'}">								
+							<view class="slide_line_value" :style="{'width' : body_lis.heightLeft + 10 + 'upx'}">								
 							</view>
 						</view>
 						<view class="slide_dot main-bg-color" 
@@ -94,7 +94,7 @@
 					<view class="basic">
 						爱好
 					</view>
-					<input type="text" maxlength="20" v-model="input_data.hobby" :value="input_data.hobby" placeholder-style="font-size:35upx;font-weight:100" placeholder="如:打球,看书,旅游">
+					<input type="text" maxlength="20" v-model="input_data.hobby"  placeholder-style="font-size:35upx;font-weight:100;" placeholder="如:打球,看书,旅游">
 				</view>
 				<view class="body_lis">
 					<view class="basic">
@@ -153,6 +153,7 @@
 <script>
 	import {getDate} from "../../static/js/getdate.js";
 	import Loading from "../../components/loading.vue";
+	import {getIndex, getValue} from "../../static/js/getIndex.js"
 	export default {
 		data() {
 			return {
@@ -184,7 +185,7 @@
 					heightWidth: 255
 				},
 				education:[
-					{name:'高中及一下'}, 
+					{name:'高中及以下'}, 
 					{name:'专科'}, 
 					{name:'本科'}, 
 					{name:'硕士'}, 
@@ -200,21 +201,29 @@
 				marry_index:0,
 				salary:[
 					{name:'5000以下'},
-					{name:'5001-10000'},
-					{name:'10001-20000'},
-					{name:'20001以上'}					
+					{name:'5000-9999'},
+					{name:'10000-19999'},
+					{name:'20000以上'}					
 				],
-				salary_index:1
+				salary_index:1,
+				duplicateImg:false
 			}
 		},
 		onLoad() {
 			this.user_data = uni.getStorageSync('user');
 			console.log(this.user_data);
 			this.input_data.image = this.user_data.avatarSrc;
-			this.input_data.nickname = this.user_data.nickname
+			this.input_data.nickname = this.user_data.nickname;
 			this.input_data.gender = this.user_data.gender;
 			this.input_data.birthday = this.user_data.birthday;
 			this.input_data.hobby = this.user_data.hobby;
+			this.input_data.weight = this.user_data.weight;
+			this.input_data.height = this.user_data.heigth;
+			this.body_lis.weightLeft = getValue(this.user_data.weight, 1);
+			this.body_lis.heightLeft = getValue(this.user_data.heigth, 2);
+			this.education_index = getIndex(this.user_data.education, 1);
+			this.marry_index = getIndex(this.user_data.marry, 2);
+			this.salary_index = getIndex(this.user_data.salary, 3);
 			this.show.main = true;
 		},		
 		methods: {
@@ -235,6 +244,7 @@
 					success: (res) => {
 						console.log(JSON.stringify(res.tempFilePaths[0]));
 						_this.input_data.image = res.tempFilePaths[0];
+						this.duplicateImg = true;
 					}
 				})
 			},
@@ -271,20 +281,19 @@
 			},
 			handleSubmit(){
 				this.input_data.education = this.education[this.education_index].name;
-				this.input_data.marry = this.marry[this.marry_index].name
+				this.input_data.marry = this.marry[this.marry_index].name;
 				if(this.salary_index === 0){
-					this.input_data.salary = 5000;
+					this.input_data.salary = 4999;
 				}else if(this.salary_index === 1){
-					this.input_data.salary = 10000;
+					this.input_data.salary = 9999;
 				}else if(this.salary_index === 2){
-					this.input_data.salary = 20000
+					this.input_data.salary = 19999;
 				}else{
-					this.input_data.salary = 20001
+					this.input_data.salary = 20000;
 				}
-				
 				uni.uploadFile({
 					url:this.url+'/users/update',
-					filePath:this.input_data.image,
+					filePath:this.duplicateImg ? this.input_data.image : '',
 					name:'avatarSrc',
 					formData:{
 						phoneNum:this.user_data.phoneNum,
@@ -301,9 +310,10 @@
 					success: (res) => {
 						let json_data = JSON.parse(res.data);
 						console.log(json_data);
-					}
-					
+						console.log(this.input_data.image);
+					}					
 				})
+				
 			}
 		},
 		computed:{
