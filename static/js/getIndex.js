@@ -8,6 +8,7 @@ exports.getIndex = (value, flag)=>{
 				return i;
 			}
 		}
+		return 1;
 	}else if (flag === 2){
 		for(var i = 0; i < marry.length; i++){
 			if(value === marry[i]){

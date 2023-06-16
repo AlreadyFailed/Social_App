@@ -18,12 +18,6 @@
 				<view class="body_avatar" @tap="handleChangeAvatar">
 					<image :src="input_data.image"></image>
 				</view>
-				<!-- <view class="body_lis">
-					<view class="basic  fs-40">
-						用户��
-					</view>
-					<input type="text" maxlength="20" v-model="input_data.username" :value="input_data.username == null ? '': input_data.username" placeholder="设置用户��可用于登�� placeholder-style="font-size:35upx;font-weight:100">
-				</view> -->
 				<view class="body_lis">
 					<view class="basic">
 						昵称
@@ -117,8 +111,8 @@
 					<view class="picker_selector fs-600 fs-40">
 						<picker mode="selector" 
 						:range="marry" 
-						range-key="name"
 						:value="marry_index"
+						range-key="name"
 						@change="handleChangeMarry">
 							<view>{{marry[marry_index].name}}</view>
 						</picker>
@@ -130,13 +124,15 @@
 					</view>
 					<view class="picker_selector fs-600 fs-40">
 						<picker mode="selector" 
-						:range="salary" 
-						range-key="name"
+						:range="salary" 						
 						:value="salary_index"
+						range-key="name"
 						@change="handleChangeSalary">
 							<view>{{salary[salary_index].name}}</view>
 						</picker>
 					</view>
+					
+					
 				</view>
 			</scroll-view>
 			
@@ -196,7 +192,7 @@
 					{name:'保密'},
 					{name:'单身'},
 					{name:'未婚'},
-					{name:'已婚'},
+					{name:'已婚'}
 				],
 				marry_index:0,
 				salary:[

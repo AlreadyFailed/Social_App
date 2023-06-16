@@ -5327,8 +5327,8 @@ var render = function () {
                               attrs: {
                                 mode: "selector",
                                 range: _vm._$g(47, "a-range"),
-                                "range-key": "name",
                                 value: _vm._$g(47, "a-value"),
+                                "range-key": "name",
                                 _i: 47,
                               },
                               on: {
@@ -5369,8 +5369,8 @@ var render = function () {
                               attrs: {
                                 mode: "selector",
                                 range: _vm._$g(52, "a-range"),
-                                "range-key": "name",
                                 value: _vm._$g(52, "a-value"),
+                                "range-key": "name",
                                 _i: 52,
                               },
                               on: {

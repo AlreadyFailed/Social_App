@@ -137,13 +137,12 @@
 				})
 			},
 			handleInfo(index){
-				if(this.show.isLogin){
+				if(index == 0){
 					uni.navigateTo({
 						url:"/pages/info/info",
 						animationType:"slide-in-right",
 						animationDuration:500
 					})
-					this.reload();
 				}else{
 					uni.showToast({
 						title:"请登录",
