@@ -1,0 +1,31 @@
+server:
+  port: 7070
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/app_develope?useAffectedRows=true
+    username: root
+    password: 123456
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+aliyun:
+  oss:
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    accessKeyId: LTAI5tRgdDRon9SzRezSuEZj
+    accessKeySecret: atq9i4lVVF27NHafWM8rilIwYxtGqr
+    bucketName: app-develope
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
