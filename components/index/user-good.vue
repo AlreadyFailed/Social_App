@@ -1,4 +1,5 @@
 <template>
+	<!-- 点赞组件 -->
 	<view class="good-value" >
 		<image src="../../static/src/heart.png" mode=""></image>
 		<text class="color-9191">{{value}}</text>

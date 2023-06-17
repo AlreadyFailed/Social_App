@@ -1,4 +1,5 @@
 <template>
+	<!-- 固有列表组件 -->
 	<view>
 		<view :class="['body_inherent_lis', {'inherent_lis_color':isShow}]" 
 		@touchstart="convertColorToMain" 
@@ -45,12 +46,11 @@
 		box-sizing: border-box;
 		margin-top: 15upx;
 		height: 150upx;
-		width: 100%;
-		
+		width: 100%;		
 		/* background-color: lightgray; */
 	}
 	.inherent_lis_color{
-		background-color: #ebebeb
+		background-color: #ebebeb;
 	}
 
 	.inherent_lis_img {

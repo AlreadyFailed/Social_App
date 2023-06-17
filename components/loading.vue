@@ -1,4 +1,5 @@
 <template>
+	<!-- 通用的加载组件 -->
 	<view class="loaidng">		
 		<image src="../static/src/loading.gif" mode=""></image>
 	</view>

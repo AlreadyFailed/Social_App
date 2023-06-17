@@ -1,9 +1,13 @@
 <template>
+	<!-- 注册时的资料填写页面 -->
 	<view class="setting">
+		<!-- 头部：标题 -->
 		<view class="head_title text-center main-bg-color">
 			填写资料
 		</view>
+		<!-- 内容体 -->
 		<view class="body">
+			<!-- 内容体：设置头像 -->
 			<view :class="['avatar', 'main-border-color', 'text-center', {'overflow-hidden': show.showText}]" @tap="imgClick">
 				<image :class="['avatar_src', {'display-none': !show.showText}]" :src="inputData.avatar_src" mode=""></image>
 				<view :class="['avatar_text','main-text-color', 'fs-28','fs-600', {'display-none':show.showText}]">上传头像</view>
@@ -14,6 +18,7 @@
 					请设置头像
 				</view>
 			</view>
+			<!-- 内容体：设置昵称 -->
 			<view class="nickname">
 				<view class="fs-28 main-text-color fs-600 text-center">
 					设置昵称
@@ -23,6 +28,7 @@
 					请输入昵称
 				</view>
 			</view>
+			<!-- 内容体：设置性别 -->
 			<view class="sexy">
 				<view class="fs-28 main-text-color fs-600 text-center ">
 					选择性别
@@ -45,6 +51,7 @@
 					</view>
 				</view>
 			</view>
+			<!-- 内容体：设置生日 -->
 			<view class="birthday">
 				<view class="fs-28 main-text-color fs-600 text-center ">
 					设置生日
@@ -56,6 +63,7 @@
 					</picker>
 				</view>
 			</view>
+			<!-- 内容体：提交 -->
 			<view class="complete fs-40 fs-600 text-center color-fff main-bg-color" @tap="upload">
 				提交
 			</view>
@@ -66,22 +74,26 @@
 <script>
 	export default {
 		data() {
+			// 今天的日期
 			const currentDate = this.getDate({
 				format: true
 			})
 			return {
+				// 保存用户填写的信息
 				inputData: {
 					nickname: '',
 					gender:0,
 					avatar_src:"",
 					date: currentDate
 				},
+				// 显示对象
 				show:{
 					showSexy: false,
 					showText:false,
 					showNN: true,
 					showAva:true
 				},
+				// 坐标对象
 				coordinate:{
 					longitude: 0.0,
 					latitude: 0.0
@@ -90,6 +102,7 @@
 			}
 		},
 		computed: {
+			// 计算日期范围
 			startDate() {
 				return this.getDate('start');
 			},
@@ -98,12 +111,15 @@
 			}
 		},
 		methods: {
+			// 选择性别
 			choiceSexy1() {
 				this.show.showSexy = false;
 			},
 			choiceSexy2() {
 				this.show.showSexy = true;
 			},
+			
+			// 显示选择的日期
 			bindDateChange: function(e) {
 				this.inputData.date = e.detail.value
 			},
@@ -122,6 +138,8 @@
 				day = day > 9 ? day : '0' + day;
 				return `${year}-${month}-${day}`;
 			},
+			
+			// 选择图片
 			imgClick(){
 				var _this = this;
 				uni.chooseImage({
@@ -137,14 +155,16 @@
 				})
 				
 			},
+			
+			// 上传图片
 			upload(){
-				// Judge inputdata is Empty
+				// 判断是否有没填写的信息
 				if(this.inputData.nickname == '' || this.inputData.avatar_src == ''){
 					if(this.inputData.avatar_src == ''){this.show.showAva = false;}
 					if(this.inputData.nickname == ''){this.show.showNN = false;}
 					else{this.show.showNN = true}
 				}
-				// Judge inputdata is correct
+				// 判断填写的信息，是否违规。
 				else{
 					uni.getLocation({
 						type: 'gcj02',
@@ -155,11 +175,9 @@
 							console.log(address);
 							this.coordinate.longitude = longitude;
 							this.coordinate.latitude = latitude;
-							// let distance = getDistance(this.coordinate.longitude, this.coordinate.latitude, 110, 30);
-							// distance = Number(distance).toFixed(2)
-							// console.log(distance);
 						}
 					})
+					// 因为uni的接口时异步执行，为了保证先后顺序，这里用了一个定时器。
 					setTimeout(()=>{
 						uni.uploadFile({
 							url:this.url + "/upload",

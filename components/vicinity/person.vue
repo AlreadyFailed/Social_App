@@ -1,4 +1,5 @@
 <template>
+	<!-- 个人信息展示组件 -->
 	<view class="swiper-item">
 		<view class="body_person">
 			<view class="body_person_img">

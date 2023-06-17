@@ -1,4 +1,5 @@
 <template>
+	<!-- 个人信息栏组件 -->
 	<view>
 		<view class="detail-user">
 			<text class="text">{{username}}</text>

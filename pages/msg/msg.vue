@@ -1,14 +1,17 @@
 <template>
+	<!-- 消息页 -->
 	<view>
+		<!-- 加载标签 -->
 		<loading v-if="!show.main"></loading>
+		<!-- 正文 -->
 		<view class="body" v-if="show.main">
 
-			<!-- Title -->
+			<!-- 标题 -->
 			<view class="body_title text-center color-fff fs-40">
 				消息
 			</view>
 
-			<!-- Inherent list -->
+			<!-- 固有列表 -->
 			<view class="body_inherent">
 				<view :class="['body_inherent_lis', {'inherent_lis_color':show.inherent == index}]"
 					@touchstart="convertColorToMain(index)" @touchend="convertColorToNor(index)"
@@ -27,7 +30,7 @@
 				</view>
 			</view>
 
-			<!-- Session list -->
+			<!-- 聊天列表 -->
 			<view class="body_inherent" v-for="(item, index) in user_data.length" :key="index">
 				<view :class="['body_inherent_lis', {'inherent_lis_color':show.session == index}]"
 					@touchstart="convertColorToMain(index)" @touchend="convertColorToNor(index)">
@@ -47,7 +50,7 @@
 
 		</view>
 
-		<!-- Chat page -->
+		<!-- 聊天页 -->
 		<view class="chatPage" :style="{'left': coordinate.x + 'upx'}" v-if="show.chat">
 			<!-- Title -->
 			<view class="chatPage_title fs-40 fs-600 text-center">
@@ -56,7 +59,7 @@
 					<image src="../../static/xiangzuojiantou.png" mode=""></image>
 				</view>
 			</view>
-			<!-- Page Room -->
+			<!-- 聊天区 -->
 			<scroll-view class="chatPage_chatRoom" scroll-y="true" :style="{'height' : scroll.height + 'upx'}"
 				:scroll-into-view="scroll.toView" scroll-with-animation="false">
 				<view class="chatRoom_item" v-for="(item, index) in msg" :id="'msg' + item.id" :key="item.id">
@@ -84,7 +87,7 @@
 					</view>
 				</view>
 			</scroll-view>
-			<!-- Page Bottom -->
+			<!-- 聊天按钮 -->
 			<view class="chatPage_buttom" :style="{'bottom':scroll.bottom + 'upx'}">
 				<view class="chatPage_buttom_warp">
 					<view class="chatPage_bottom_voice">
@@ -98,7 +101,6 @@
 						<image src="../../static/src/qita.png" mode=""></image>
 					</view>
 				</view>
-
 				<view :class="['chatPage_buttom_more', {'display-none' : show.more}]">
 				</view>
 			</view>
@@ -111,6 +113,7 @@
 	export default {
 		data() {
 			return {
+				// 显示数组,控制html中需要隐藏和显示的标签
 				show: {
 					main: false,
 					inherent: -1,
@@ -118,19 +121,24 @@
 					chat: false,
 					more: true
 				},
+				// src数组，保存固有列表和对话列表中的图标和头像。
 				src: {
 					inherent: ['../../static/src/new_pengyou.png', '../../static/src/yonhu.png',
 						'../../static/src/qunliao.png'
 					],
 					session: ['../../static/src/avatar_1.jpg']
 				},
+				// 后端返回的数据
 				user_data: {},
+				// html中标签的坐标，用于控制滑动展示
 				coordinate: {
 					x: 750,
 					y: 0
 				},
+				// 固有列表的文本
 				text: ['添加好友', '仅聊天的会话', '群聊'],
 				color: [false, false, false],
+				// 每次发送的消息说明。
 				msg: [{
 					id: 1,
 					nickname: '法外狂徒',
@@ -142,11 +150,13 @@
 					height: 125,
 					text: "laksdjflkasdjgflasgjlkasdjglaskjdflaskjdflskadjf"
 				}],
+				// 滑动按钮所需的参数
 				scroll: {
 					toView: null,
 					height: 1390,
 					bottom:-500
 				},
+				// 标志，用于条件判断
 				flag: {
 					uid: 2,
 					sign: 1,
@@ -155,6 +165,7 @@
 
 			}
 		},
+		// 预加载
 		onLoad() {
 			uni.request({
 				url: this.url + "/users/msg",
@@ -178,6 +189,7 @@
 			})
 		},
 		methods: {
+			// 点击的交互效果
 			handleColor(index) {
 				if (index == 0) {
 					this.color[0] = true;
@@ -193,6 +205,7 @@
 					this.color[2] = true;
 				}
 			},
+			// 交互效果
 			convertColorToMain(index) {
 				if (index == 0) {
 					this.show.inherent = 0;
@@ -202,6 +215,7 @@
 					this.show.inherent = 2;
 				}
 			},
+			// 弹出消息页
 			convertColorToNor(index) {
 				this.show.inherent = -1;
 				if (!this.flag.throttle) {
@@ -214,9 +228,11 @@
 							clearInterval(timer);
 						}
 					}, 15)
+					// 隐藏底部tabbar
 					uni.hideTabBar();
 				}
 			},
+			// 从聊天页返回消息页
 			handleGoback() {
 				if (!this.flag.throttle) {
 					this.flag.throttle = 1;
@@ -232,6 +248,7 @@
 					uni.showTabBar();
 				}
 			},
+			// 计算星期
 			handleTime(e) {
 				var time = new Date();
 				var year = time.getFullYear();
@@ -278,6 +295,7 @@
 			chatPageScroll(e) {
 
 			},
+			// 打开表情列表
 			getExpression() {
 				if (this.flag.sign === 1) {
 					if (!this.flag.throttle) {
@@ -330,6 +348,7 @@
 				}, 10)
 			}
 		},
+		
 		components: {
 			'loading': Loading
 		}

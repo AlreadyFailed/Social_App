@@ -4,6 +4,8 @@ import App from './App'
 import Vue from 'vue'
 import './uni.promisify.adaptor'
 Vue.config.productionTip = false
+
+// 声明公共url
 Vue.prototype.url = "http://159.75.186.25:7070";
 App.mpType = 'app'
 const app = new Vue({

@@ -1,12 +1,13 @@
 <template>
+	<!-- 登录页 -->
 	<view class="login">
-		<!-- Background -->
+		<!-- 背景图 -->
 		<image class="login_bg" src="../../static/src/login_bg.jpg" mode=""></image>	
-		<!-- Back to -->
+		<!-- 返回按钮 -->
 		<view class="back" @tap="handleBack">
 			<image src="../../static/xiangzuojiantou.png" mode=""></image>
 		</view>
-		<!-- Title -->
+		<!-- 标题 -->
 		<view class="login_title main-text-color fs-600 text-center">
 			<view :class="[{'login_title_border color-fff': signIn}]" @tap="handleSignIn" >
 				用户名登录
@@ -15,7 +16,7 @@
 				手机号登录
 			</view>
 		</view>
-		<!-- Body -->
+		<!-- 内容体 -->
 		<view class="login_body">
 			<login-comp :index='index'></login-comp>			
 			<view class="body_3th text-center color-fff fs-28">
@@ -29,15 +30,21 @@
 </template>
 
 <script>
+	// 导入组件
 	import Login_Comp from "../../components/login/login.vue";
 	import Login_Img from "../../components/login/login-img.vue";
 	export default {
 		data() {
 			return {
+				// 登录标志
 				signIn:true,
+				// 切换登录方式的下标
 				index:0,
+				
 				flag:true,
+				// 第三方登录图标数组
 				img_src:["../../static/src/qq.png", "../../static/src/weixin.png"],
+				// 显示是否接受协议
 				showAgree:false
 			}
 		},

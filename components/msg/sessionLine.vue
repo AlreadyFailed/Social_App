@@ -1,4 +1,5 @@
 <template>
+	<!-- 会话组件 -->
 	<view>
 		<view :class="['body_inherent_lis', {'inherent_lis_color':isShow}]" @touchstart="convertColorToMain"
 			@touchend="convertColorToNor">
@@ -46,7 +47,6 @@
 		margin-top: 15upx;
 		height: 150upx;
 		width: 100%;
-
 		/* background-color: lightgray; */
 	}
 

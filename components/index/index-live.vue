@@ -1,4 +1,5 @@
 <template>
+	<!-- 直播组件 -->
 	<view>
 		<view class="body_live_content">
 			<image :src="live_online" mode=""></image>

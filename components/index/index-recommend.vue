@@ -1,4 +1,5 @@
 <template>
+	<!-- 推荐列表组件 -->
 	<view>
 		<view class="body_recommend_content">
 			<view class="content_left">

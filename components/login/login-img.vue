@@ -1,4 +1,5 @@
 <template>
+	<!-- 圆片组件，用于圆形展示图片 -->
 	<view class="img">
 		<image :src="img_src" mode=""></image>
 	</view>

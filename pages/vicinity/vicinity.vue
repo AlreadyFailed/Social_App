@@ -1,10 +1,12 @@
 <template>
+	<!-- 附近的人页 -->
 	<view>
-		<!-- Loading -->
+		<!-- 加载标签 -->
 		<loading v-if="!show.main"></loading>
 
-		<!-- Body -->
+		<!-- 内容体 -->
 		<view class="body" v-if="show.main">
+			<!-- 滑动显示附近的人 -->
 			<swiper class="body_swiper" :current="index" :duration="300">
 				<swiper-item v-for="(item, idx) in maxPerson" :key="idx">
 					<person :nickname="user_Data[idx].nickname" :age="user_Data[idx].age"
@@ -12,8 +14,9 @@
 						:distance="user_Data[idx].distance" :distanceSrc="src.distance"></person>
 				</swiper-item>
 			</swiper>
-
+			<!-- 列表-->
 			<view class="body_button">
+				<!-- 点赞按钮 -->
 				<view class="body_button_pos">
 					<view class="body_button_img">
 						<image :src="show.interest ? button[0]: button[1]" mode="" @tap="interest"></image>
@@ -21,8 +24,8 @@
 					<view class="body_button_text text-center color-6362 fs-40">
 						{{text[0]}}
 					</view>
-
 				</view>
+				<!-- 聊天按钮 -->
 				<view class="body_button_pos">
 					<view class="body_button_img">
 						<image :src="button[2]" mode=""></image>
@@ -31,6 +34,7 @@
 						{{text[1]}}
 					</view>
 				</view>
+				<!-- 下一个按钮 -->
 				<view class="body_button_pos">
 					<view class="body_button_img" @tap="nextPerson">
 						<image :src="button[3]" mode=""></image>
@@ -39,23 +43,21 @@
 						{{text[2]}}
 					</view>
 				</view>
-				<!-- <slider @change="durationChange" :value="duration" min="500" max="2000" /> -->
 			</view>
 		</view>
 
-		<!-- Screen -->
+		<!-- 筛选页 -->
 		<view class="screen" v-if="show.screen" @tap="closeScreen">
 			<view class="screen_body" @tap.stop="testFn">
-				<!-- Screen Close -->
-				<image class="screen_body_close" src="../../static/src/fanhui-xiao.png" mode="" @tap="closeScreen">
-				</image>
+				<!-- 关闭按钮 -->
+				<image class="screen_body_close" src="../../static/src/fanhui-xiao.png" mode="" @tap="closeScreen"></image>
 
-				<!-- Screen Title -->
+				<!-- 标题 -->
 				<view class="screen_body_title text-center main-text-color fs-600 fs-40">
 					筛选
 				</view>
 
-				<!-- Screen Gender -->
+				<!-- 筛选性别 -->
 				<view class="screen_body_gender">
 					<view class="gender_title fs-28 color-6362">
 						性别
@@ -95,7 +97,7 @@
 					</view>
 				</view>
 
-				<!-- Screen Age -->
+				<!-- 筛选年龄区间 -->
 				<view class="screen_body_age">
 					<view class="age_title fs-28 color-6362">
 						年龄(岁)
@@ -124,7 +126,7 @@
 					</view>
 				</view>
 
-				<!-- Screen Distance Interval -->
+				<!-- 筛选距离 -->
 				<view class="screen_body_distance">
 					<view class="distance_title fs-28 color-6362">
 						范围
@@ -143,7 +145,7 @@
 					</view>
 				</view>
 
-				<!-- Screen Salary Interval -->
+				<!-- 筛选薪资 -->
 				<view class="screen_body_salary">
 					<view class="salary_title color-6362 fs-28">
 						年收入
@@ -164,7 +166,7 @@
 					</view>
 				</view>
 
-				<!-- Screen Button -->
+				<!-- 提交筛选条件 -->
 				<view @tap="handleScreen" class="screen_body_button main-bg-color color-fff text-center fs-600 fs-40">
 					搜索
 				</view>
@@ -186,6 +188,7 @@
 	export default {
 		data() {
 			return {
+				// 显示对象
 				show: {
 					main: false,
 					interest: true,
@@ -194,7 +197,9 @@
 					gender2: false,
 					gender3: false
 				},
+				// 用户信息对象
 				user_Data: {},
+				// 图片对象
 				src: {
 					famale: "../../static/src/0.png",
 					male: "../../static/src/1.png",
@@ -203,9 +208,11 @@
 					],
 					distance: "../../static/src/dingwei.png"
 				},
+				// 按钮图标对象
 				button: ['../../static/src/guanzhu2.png', '../../static/src/guanzhu.png', '../../static/src/dazhaohu.png',
 					'../../static/src/xiayige.png'
 				],
+				// 坐标对象
 				coordinate: {
 					longitude: 0,
 					latitude: 0,
@@ -214,22 +221,29 @@
 					x3: 40,
 
 				},
+				// 标识对象
 				flag: {
 					gender: 0
 				},
+				// 年龄对象
 				age: {
 					left: 24,
 					right: 30
 				},
+				// 薪资对象
 				salary: ['0-5万', '5-10万', '10-20万', '不限'],
+				// 薪资下标
 				salary_idx: 0,
+				// 文本对象
 				text: ['关注', '打招呼', '下一个'],
+				// 距离
 				distance: 500,
 				index: 0,
 				maxPerson: 0,
 			}
 		},
 		onLoad() {
+			// 预加载
 			uni.request({
 				url: this.url + "/users/vic",
 				method: "GET",
@@ -254,6 +268,7 @@
 			})
 		},
 		methods: {
+			// 切换下一个
 			nextPerson() {
 				if (this.index < this.maxPerson - 1) {
 					this.index += 1;
@@ -261,9 +276,11 @@
 					return;
 				}
 			},
+			// 点攒
 			interest() {
 				this.show.interest = !this.show.interest;
 			},
+			// 关闭筛查页
 			closeScreen() {
 				this.show.screen = false;
 				this.coordinate.x = 120;
@@ -278,9 +295,11 @@
 				this.salary_idx = 0;
 				this.distance = 500;
 			},
+			// 防止穿透
 			testFn(e) {
 				e.preventDefault();
 			},
+			// 性别筛选
 			gender(e) {
 				if (e.target.offsetLeft < 50) {
 					this.show.gender1 = !this.show.gender1;
@@ -302,6 +321,7 @@
 					else this.flag.gender = null;
 				}
 			},
+			// 拖动区间选择器
 			drawMove(e) {
 				let endX = e.changedTouches[0].pageX;
 				if (endX > 0 && endX < 120) {
@@ -325,9 +345,12 @@
 					if (this.distance > 5000) this.distance = 5000;
 				}
 			},
+			
+			// 筛选薪资区间
 			salaryInterval(e, index) {
 				this.salary_idx = index;
 			},
+			// 根据薪资范围，确定最大和最小区间
 			handleScreen() {
 				// Limit salary range
 				var salaryMax = null;
@@ -346,7 +369,7 @@
 					salaryMin = 0;
 				}
 				
-				// Send Request
+				// 提交筛选条件
 				uni.request({
 					url: this.url + "/users/screen",
 					method: 'POST',
@@ -378,6 +401,7 @@
 			'person': Person,
 			'login-img': Login_img
 		},
+		// 隐藏底部tabbar
 		onNavigationBarButtonTap(e) {
 			this.show.screen = true;
 		}

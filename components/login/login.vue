@@ -1,4 +1,5 @@
 <template>
+	<!-- 登录页的登录方式组件 -->
 	<swiper class="body_login" :current="index" disable-touch="true" :duration="300">
 		<swiper-item>
 			<view class="swiper-item">				
@@ -98,11 +99,12 @@
 			};
 		},
 		methods: {
+			// 登录
 			SignIn() {
 				const reg =
 					/^[1](([3][0-9])|([4][5-9])|([5][0-3, 5-9])|([6][5,6])|([7][0-8])|([8][0-9])|([9][1,8,9]))[0-9]{8}$/;
 				var determine = reg.test(this.signInTel);
-				// Judge Tel,PWD,Agreemetn are empty				
+				// 判断是否为空				
 				if(this.signInTel.length != 11 || this.signInPwd.length <= 6 || !this.accept_agree){
 					if(this.signInTel.length != 11 || this.signInPwd.length <= 6){
 						this.show_PWD = false;
@@ -115,7 +117,7 @@
 						this.show_Agree = true;
 					}
 				}
-				// Judge them’s correctness
+				// 判断填写信息的正确性
 				else{
 					if(determine && this.accept_agree){
 						uni.request({
@@ -149,11 +151,14 @@
 					}
 				}
 			},
+			// 发送验证码
 			sendVericode(e){
+				// 确定手机号是否合规
 				const reg =
 					/^[1](([3][0-9])|([4][5-9])|([5][0-3, 5-9])|([6][5,6])|([7][0-8])|([8][0-9])|([9][1,8,9]))[0-9]{8}$/;
 				var determineTel = reg.test(this.signUpTel);				
-				if(determineTel){					
+				if(determineTel){
+					// 限制重复发送
 					if(!this.codeTime){
 						this.show_TEL2 = true;	
 						this.inputcode = '';
@@ -164,7 +169,9 @@
 								phoneNum : this.signUpTel
 							},
 							success:res=>{
+								// 进行失效计算
 								this.startTime = (new Date().getTime()) + (this.codeTime * 1000);
+								// 保存验证码
 								this.getcode = res.data.data;
 								this.currentTel = this.signUpTel;
 								console.log(res.data);
@@ -182,6 +189,7 @@
 							}
 						})
 						
+						// 开始进行倒计时
 						this.codeTime = 15;
 						let timer = setInterval(()=>{
 							this.codeTime--;
@@ -205,7 +213,8 @@
 				}				
 			},
 			SignUp(){
-				// Judge input data is Empty
+				// 注册
+				// 判断是否有空数据
 				if(this.inputcode.length === 0 || this.signUpTel.length != 11 || !this.accept_agree || this.signUpPwd.length === 0){
 					if(this.signUpPwd.length == 0){
 						this.show_PWD2 = false;
@@ -225,7 +234,7 @@
 					else{this.show_Agree2 = true}
 				}
 				
-				// Judge input data is correct
+				// 判断输入的信息是否正确
 				else{
 					var reg = /^(?=.*\d)(?=.*[A-Z])[a-zA-Z0-9]{6,18}$/;
 					var determinePWD = reg.test(this.signUpPwd);
@@ -279,10 +288,8 @@
 							this.show_Vericode = false;
 							console.log("The verify code has expired");
 						}
-										
 					}					
-				}
-				
+				}				
 			},
 			acceptAgree(){
 				this.accept_agree = !this.accept_agree;
@@ -376,7 +383,6 @@
 		color: rgb(172, 25, 140);
 	}
 	.body_agreement_tips{
-		/* margin-left: 20upx; */
 		width: 350upx;
 		height: 50upx;
 		/* background-color: lightgray; */
