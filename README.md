@@ -1,3 +1,3 @@
 # 社交类APP
-frontEnd  : 前端
-rearEnd   : 后端
+App_frontEnd  : 前端
+App_rearEnd   : 后端
