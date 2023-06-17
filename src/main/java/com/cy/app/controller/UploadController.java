@@ -60,7 +60,6 @@ public class UploadController {
         users.setGender(Short.valueOf(map.get("gender")));
         users.setCoordinateLat(Double.valueOf(map.get("coordinateLat")));
         users.setCoordinateLong(Double.valueOf(map.get("coordinateLong")));
-//        log.info("Users : {}", users);
 
         // 通过阿里云，对象oss服务获取头像的url，然后存入user
         MultipartFile image = params.getFile("image");

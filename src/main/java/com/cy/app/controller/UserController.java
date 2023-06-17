@@ -49,13 +49,7 @@ public class UserController {
             return Result.error("Data Empty");
         }
     }
-
-    /**
-     * 附近的人，接口
-     * @param req
-     * @param distance
-     * @return
-     */
+    
     @GetMapping("/vic")
     public Result vicinity(HttpServletRequest req, Integer distance) {
         // 获取jwt，并取出保存其中的电话号码。
